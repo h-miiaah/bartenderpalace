@@ -20,6 +20,12 @@ class Api::V1::DrinksController < ApplicationController
         render json: @drink, status: 200
     end
 
+    def destroy
+        @drink = Dring.find(params[:id])
+        @drink.delete
+        render json: {drinkId: @drink.id}
+    end
+
     private
 
     def drink_params
