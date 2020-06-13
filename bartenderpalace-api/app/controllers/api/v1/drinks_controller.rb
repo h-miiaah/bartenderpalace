@@ -14,6 +14,12 @@ class Api::V1::DrinksController < ApplicationController
         render json: @drink, status: 200
     end
 
+    def update
+        @drink = Dring.find(params[:id])
+        @drink.update(drink_params)
+        render json: @drink, status: 200
+    end
+
     private
 
     def drink_params
