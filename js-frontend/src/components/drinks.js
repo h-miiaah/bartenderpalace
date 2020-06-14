@@ -5,4 +5,10 @@ class Drinks {
     this.adapter = new DrinksAdapter();
     this.fetchAndLoadDrinks();
   }
+
+  fetchAndLoadDrinks() {
+    this.adapter.getDrinks().then((drinks) => {
+      console.log(drinks);
+    });
+  }
 }
