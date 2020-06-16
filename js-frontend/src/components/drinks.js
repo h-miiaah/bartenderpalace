@@ -21,7 +21,14 @@ class Drinks {
     const drinkNameValue = this.newDrinkName.value;
     const drinkDescriptionValue = this.newDrinkDescription.value;
 
-    this.adapter.createDrink(drinkNameValue, drinkDescriptionValue);
+    this.adapter
+      .createDrink(drinkNameValue, drinkDescriptionValue)
+      .then((drink) => {
+        this.drinks.push(new Drink(drink));
+        this.newDrinkName.value = "";
+        this.newDrinkDescription.value = "";
+        this.render();
+      });
   }
 
   fetchAndLoadDrinks() {

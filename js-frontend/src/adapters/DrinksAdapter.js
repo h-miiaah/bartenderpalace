@@ -11,8 +11,8 @@ class DrinksAdapter {
 
   createDrink(drinkNameValue, drinkDescriptionValue) {
     const drink = {
-      drinkName: drinkNameValue,
-      drinkDescription: drinkDescriptionValue,
+      name: drinkNameValue,
+      description: drinkDescriptionValue,
     };
     return fetch(this.baseUrl, {
       method: "POST",
@@ -20,6 +20,6 @@ class DrinksAdapter {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ drink }),
-    });
+    }).then((res) => res.json());
   }
 }
