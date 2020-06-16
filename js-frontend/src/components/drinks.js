@@ -15,7 +15,7 @@ class Drinks {
     this.drinkForm.addEventListener("submit", this.createDrink.bind(this)); // we bind(this) to this.createDrink to it will bind the Drinks class otherwise it will bind the drink form.
   }
 
-  // adding an event parameter so we can then prevent the default behavior of refreshing the page after creating a drink using the form.
+  // adding an event parameter so we can then prevent the default behavior of refreshing the page after creating a drink using the form. Set consts on the drinkNameValue, and drinkDescriptionValue. Use the adapters createDrink() to make a POST fetch request to the api, clear out the input fields from the form, then render that drink to the dom.
   createDrink(e) {
     e.preventDefault();
     const drinkNameValue = this.newDrinkName.value;
