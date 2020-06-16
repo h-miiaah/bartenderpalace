@@ -11,6 +11,7 @@ class Drinks {
       .getDrinks()
       .then((drinks) => {
         drinks.forEach((drink) => this.drinks.push(drink));
+        console.log(this.drinks);
       })
       .then(() => {
         this.render();
