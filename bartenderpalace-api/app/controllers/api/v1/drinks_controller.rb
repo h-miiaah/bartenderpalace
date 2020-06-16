@@ -10,7 +10,6 @@ class Api::V1::DrinksController < ApplicationController
     end
 
     def create
-        binding.pry
         @drink = Drink.create(drink_params)
         render json: @drink, status: 200
     end
