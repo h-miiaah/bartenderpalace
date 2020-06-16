@@ -12,7 +12,12 @@
       <div class="new-drink-container">
         <form id="new-drink-form">
           Drink Name:
-          <input type="text" id="new-drink-name" placeholder="Drink Name" />
+          <input
+            type="text"
+            name="drink-body"
+            id="new-drink-name"
+            placeholder="Drink Name"
+          />
           <br />
           Drink Description:
           <textarea
@@ -24,10 +29,13 @@
           <br />
           <input type="submit" value="Submit Drink" />
         </form>
-        <br />
       </div>
+      <br />
 
-      <div id="drinks-container"></div>
+      <div id="drinks-content">
+        <div id="drinks-container"></div>
+        <div id="drink-show"></div>
+      </div>
     </div>
 
     <script src="src/components/drinks.js"></script>
