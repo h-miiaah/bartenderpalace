@@ -10,8 +10,7 @@ class Drinks {
     this.adapter
       .getDrinks()
       .then((drinks) => {
-        drinks.forEach((drink) => this.drinks.push(drink));
-        console.log(this.drinks);
+        drinks.forEach((drink) => this.drinks.push(new Drink(drink)));
       })
       .then(() => {
         this.render();
