@@ -8,4 +8,15 @@ class DrinksAdapter {
   getDrinks() {
     return fetch(this.baseUrl).then((res) => res.json());
   }
+
+  createDrink(drinkNameValue, drinkDescriptionValue) {
+    const drink = {
+      drinkName: drinkNameValue,
+      drinkDescription: drinkDescriptionValue,
+    };
+    return fetch(this.baseUrl, {
+      method: "POST",
+      body: JSON.stringify({ drink }),
+    });
+  }
 }

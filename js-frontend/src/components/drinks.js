@@ -9,6 +9,19 @@ class Drinks {
 
   initBindingsAndEventListeners() {
     this.drinksContainer = document.getElementById("drinks-container");
+    this.newDrinkName = document.getElementById("new-drink-name");
+    this.newDrinkDescription = document.getElementById("new-drink-description");
+    this.drinkForm = document.getElementById("new-drink-form");
+    this.drinkForm.addEventListener("submit", this.createDrink.bind(this)); // we bind(this) to this.createDrink to it will bind the Drinks class otherwise it will bind the drink form.
+  }
+
+  // adding an event parameter so we can then prevent the default behavior of refreshing the page after creating a drink using the form.
+  createDrink(e) {
+    e.preventDefault();
+    const drinkNameValue = this.newDrinkName.value;
+    const drinkDescriptionValue = this.newDrinkDescription.value;
+
+    this.adapter.createDrink(drinkNameValue, drinkDescriptionValue);
   }
 
   fetchAndLoadDrinks() {
