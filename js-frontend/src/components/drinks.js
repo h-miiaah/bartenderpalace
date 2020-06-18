@@ -38,6 +38,7 @@ class Drinks {
   handleDrinkClick(e) {
     const selectedElement = e.target;
     selectedElement.contentEditable = true;
+    selectedElement.focus();
     selectedElement.classList.add("editable");
   }
 
