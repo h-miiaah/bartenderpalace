@@ -22,4 +22,18 @@ class DrinksAdapter {
       body: JSON.stringify({ drink }),
     }).then((res) => res.json());
   }
+
+  updateDrink(updatedDrinkName, updatedDrinkDescription, id) {
+    const drink = {
+      name: updatedDrinkName,
+      description: updatedDrinkDescription,
+    };
+    return fetch(`${this.baseUrl}/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ drink }),
+    }).then((res) => res.json());
+  }
 }

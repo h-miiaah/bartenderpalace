@@ -5,7 +5,7 @@ class Api::V1::DrinksController < ApplicationController
     end
 
     def show
-        @drink = Dring.find(params[:id])
+        @drink = Drink.find(params[:id])
         render json: @drink, status: 200
     end
 
@@ -15,13 +15,13 @@ class Api::V1::DrinksController < ApplicationController
     end
 
     def update
-        @drink = Dring.find(params[:id])
+        @drink = Drink.find(params[:id])
         @drink.update(drink_params)
         render json: @drink, status: 200
     end
 
     def destroy
-        @drink = Dring.find(params[:id])
+        @drink = Drink.find(params[:id])
         @drink.delete
         render json: {drinkId: @drink.id}
     end

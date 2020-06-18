@@ -46,8 +46,18 @@ class Drinks {
 
   updateDrink(e) {
     const selectedElement = e.target;
+    const id = selectedElement.dataset.id;
     selectedElement.contentEditable = false;
     selectedElement.classList.remove("editable");
+    // const updatedElementValue = selectedElement.innerHTML;
+    let updatedDrinkName = document.querySelector(
+      `li[data-id='${CSS.escape(id)}'].li-drink-name`
+    ).innerHTML;
+    let updatedDrinkDescription = document.querySelector(
+      `p[data-id='${CSS.escape(id)}'].p-drink-description`
+    ).innerHTML;
+
+    this.adapter.updateDrink(updatedDrinkName, updatedDrinkDescription, id);
   }
 
   fetchAndLoadDrinks() {
