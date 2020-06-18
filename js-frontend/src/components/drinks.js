@@ -68,7 +68,9 @@ class Drinks {
     this.adapter
       .getDrinks()
       .then((drinks) => {
-        drinks.forEach((drink) => this.drinks.push(new Drink(drink)));
+        drinks
+          .sort((a, b) => a.id - b.id)
+          .forEach((drink) => this.drinks.push(new Drink(drink)));
       })
       .then(() => {
         this.render();
