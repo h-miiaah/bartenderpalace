@@ -17,6 +17,7 @@ class Drinks {
       "dblclick",
       this.handleDrinkClick.bind(this)
     );
+    this.drinksContainer.addEventListener("blur", this.updateDrink.bind(this));
   }
 
   // adding an event parameter so we can then prevent the default behavior of refreshing the page after creating a drink using the form. Set consts on the drinkNameValue, and drinkDescriptionValue. Use the adapters createDrink() to make a POST fetch request to the api, clear out the input fields from the form, then render that drink to the dom.
@@ -41,6 +42,8 @@ class Drinks {
     selectedElement.focus();
     selectedElement.classList.add("editable");
   }
+
+  updateDrink() {}
 
   fetchAndLoadDrinks() {
     this.adapter
