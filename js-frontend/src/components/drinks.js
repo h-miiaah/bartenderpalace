@@ -44,7 +44,11 @@ class Drinks {
     selectedElement.classList.add("editable");
   }
 
-  updateDrink() {}
+  updateDrink(e) {
+    const selectedElement = e.target;
+    selectedElement.contentEditable = false;
+    selectedElement.classList.remove("editable");
+  }
 
   fetchAndLoadDrinks() {
     this.adapter
