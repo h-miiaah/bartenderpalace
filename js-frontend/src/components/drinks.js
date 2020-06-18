@@ -38,6 +38,10 @@ class Drinks {
   }
 
   handleDrinkClick(e) {
+    this.toggleDrink(e);
+  }
+
+  toggleDrink(e) {
     const selectedElement = e.target;
     selectedElement.contentEditable = true;
     selectedElement.focus();
