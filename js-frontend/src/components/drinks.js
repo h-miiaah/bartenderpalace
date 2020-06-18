@@ -9,6 +9,7 @@ class Drinks {
 
   initBindingsAndEventListeners() {
     this.drinksContainer = document.getElementById("drinks-container");
+    this.body = document.querySelector("body");
     this.newDrinkName = document.getElementById("new-drink-name");
     this.newDrinkDescription = document.getElementById("new-drink-description");
     this.drinkForm = document.getElementById("new-drink-form");
@@ -17,7 +18,7 @@ class Drinks {
       "dblclick",
       this.handleDrinkClick.bind(this)
     );
-    this.drinksContainer.addEventListener("blur", this.updateDrink.bind(this));
+    this.body.addEventListener("blur", this.updateDrink.bind(this), true);
   }
 
   // adding an event parameter so we can then prevent the default behavior of refreshing the page after creating a drink using the form. Set consts on the drinkNameValue, and drinkDescriptionValue. Use the adapters createDrink() to make a POST fetch request to the api, clear out the input fields from the form, then render that drink to the dom.
