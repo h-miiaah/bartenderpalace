@@ -8,6 +8,6 @@ class Drink {
 
   //   renders the html for the drinks container in the dom.
   renderLi() {
-    return `<div class="single-drink"><h4><li data-id=${this.id} class="li-drink-name">${this.name}</li></h4> <p data-id=${this.id} class="p-drink-description">${this.description}</p><button class="delete-button" type="button">Delete</button></div>`;
+    return `<div class="single-drink" id="single-drink"><h4><li data-id=${this.id} class="li-drink-name">${this.name}</li></h4> <p data-id=${this.id} class="p-drink-description">${this.description}</p><button class="delete-button" id="delete-button" type="button">Delete</button></div>`;
   }
 }
