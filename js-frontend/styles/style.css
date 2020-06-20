@@ -6,10 +6,6 @@ body {
   font-size: 1em;
 }
 
-a {
-  color: #097659;
-}
-
 input {
   font-size: 1em;
 }
@@ -22,10 +18,6 @@ input {
 
 ul {
   padding-left: 20px;
-}
-
-.delete-drink-link {
-  color: red;
 }
 
 .editable {
