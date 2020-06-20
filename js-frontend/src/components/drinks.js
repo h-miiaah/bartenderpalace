@@ -64,6 +64,12 @@ class Drinks {
     this.adapter.updateDrink(updatedDrinkName, updatedDrinkDescription, id);
   }
 
+  deleteDrink(e) {
+    const deleteButton = e.target;
+    const id = deleteButton.dataset.id;
+    this.adapter.deleteDrink(id);
+  }
+
   fetchAndLoadDrinks() {
     this.adapter
       .getDrinks()
