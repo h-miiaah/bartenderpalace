@@ -36,4 +36,17 @@ class DrinksAdapter {
       body: JSON.stringify({ drink }),
     }).then((res) => res.json());
   }
+
+  deleteDrink(id) {
+    const drink = {
+      id: id,
+    };
+    return fetch(`${this.baseUrl}/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ drink }),
+    }).then((res) => res.json());
+  }
 }
